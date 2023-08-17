@@ -1,0 +1,75 @@
+---
+title: "Day 4 Interactive"
+format: html
+editor: visual
+---
+
+## Functions
+
+#### Make a function that doubles  a value
+
+```{r}
+double_value <- function(my_dollars){
+  print(2*my_dollars)
+}
+  
+
+double_value(3)
+```
+
+Can try this with vectors
+
+```{r}
+monthly_income <- c(42.5,61.75,89.5)
+
+double_value(monthly_income)
+```
+
+#### Create a function that returns an awesome restaurant name given a cool animal and favorite food
+
+```{r}
+name_restaurant <- function(animal,food){
+  print(paste(animal,food))
+}
+
+name_restaurant("Cat","pizza")
+```
+
+#### Given temperature in degrees Fahrenheit, write a function that converts it to Celsius
+
+```{r}
+convert_f_to_c <- function(f_temp){
+  celsius_temp <- (f_temp -32)*5/9 
+  print(celsius_temp)
+}
+
+convert_f_to_c(86)
+```
+
+#### Create a function that given inputs of age and hometown, returns "I am \_\_ years old, and I'm from \_\_"
+
+```{r}
+age_hometown <- function(age,hometown){
+  print(paste("I am", age, "years old, and I'm from",hometown))
+}
+
+age_hometown(25,"Brooklyn")
+```
+
+In R this is already stored and will present it without the need of print
+
+```{r}
+double_value2 <- function(dollars){
+  dollars*2
+}
+
+double_value2(10)*0.08
+```
+
+For python
+
+statments and return statements
+
+Print:"show me "
+
+Return: store this aso i can use it later
