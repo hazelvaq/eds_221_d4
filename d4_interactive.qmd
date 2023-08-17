@@ -4,9 +4,13 @@ format: html
 editor: visual
 ---
 
+```{r}
+library(tidyverse)
+```
+
 ## Functions
 
-#### Make a function that doubles  a value
+#### Make a function that doubles a value
 
 ```{r}
 double_value <- function(my_dollars){
@@ -70,7 +74,7 @@ For python
 
 statments and return statements
 
-Print:"show me "
+Print:"show me"
 
 Return: store this aso i can use it later
 
@@ -107,4 +111,45 @@ t_conv_k <- function(temp_k,type){
 }
 
 t_conv_k(12,"English")
+```
+
+## More functions 
+
+#### Create a subset within a function, and then restore something based on that subset.
+
+```{r}
+dog_choice <- data.frame(dog_name = c("Khora","Teddy","Waffle","Banjo","Tallie"),
+                         food = c("everything","salmon","pancakes","chicken",
+                                  "enchiladas"))
+
+
+```
+
+```{r}
+# filter() needs data first before you can give it an argument
+
+#Here we are filtering the dog_name data frame to only show the name the user inputs
+
+dog_menu <- function(enter_dog_name){
+  my_subset <- filter(dog_choice,dog_name == enter_dog_name)
+  print(paste("My name is", my_subset$dog_name, "and my favorite food is",my_subset$food))
+}
+
+dog_menu("Khora")
+```
+
+## Function with a for loop
+
+Will return the mean of the columns of mtcar data frame as well as the name of column
+
+```{r}
+df_means <- function(df) {
+  for (i in seq_along(df)){
+    col_mean <- mean(df[[i]], na.rm = TRUE)
+    column_name <- colnames(df[i])
+    print(paste("The mean value of", column_name, "is",col_mean))
+  }
+}
+
+df_means(mtcars)
 ```
