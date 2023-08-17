@@ -113,7 +113,7 @@ t_conv_k <- function(temp_k,type){
 t_conv_k(12,"English")
 ```
 
-## More functions 
+## More functions
 
 #### Create a subset within a function, and then restore something based on that subset.
 
@@ -152,4 +152,22 @@ df_means <- function(df) {
 }
 
 df_means(mtcars)
+```
+
+## Create a function to calculate the Betz Limit 
+
+```{r}
+calculate_betz_windpower <- function(air_density,
+                                     rotor_radius,
+                                     wind_velocity){
+  if (wind_velocity > 130){
+    warning("Whoa, that's a pretty high wind speed. Are you sure?")
+  }
+  if (rotor_radius < 0){
+    stop("Rotor radius must be a positive value (meters")
+  }
+  0.3*air_density*pi*(rotor_radius^2)*(wind_velocity^3)
+}
+
+calculate_betz_windpower(1.2,9,120)
 ```
